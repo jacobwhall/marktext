@@ -45,6 +45,7 @@
     "codemirror": "^5.65.2",
     "command-exists": "^1.2.9",
     "dayjs": "^1.11.0",
+    "deep-equal": "^2.2.0",
     "dom-autoscroller": "^2.3.4",
     "dompurify": "^2.3.6",
     "dragula": "^3.7.3",
