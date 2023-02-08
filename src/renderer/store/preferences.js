@@ -24,6 +24,7 @@ const state = {
   codeFontFamily: 'DejaVu Sans Mono',
   codeBlockLineNumbers: true,
   trimUnnecessaryCodeBlockEmptyLines: true,
+  wrapCodeBlocks: true,
   editorLineWidth: '',
 
   autoPairBracket: true,

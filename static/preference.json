@@ -20,6 +20,7 @@
   "codeFontFamily": "DejaVu Sans Mono",
   "codeBlockLineNumbers": true,
   "trimUnnecessaryCodeBlockEmptyLines": true,
+  "wrapCodeBlocks": false,
   "editorLineWidth": "",
 
   "autoPairBracket": true,
