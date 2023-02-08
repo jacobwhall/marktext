@@ -57,6 +57,7 @@ const state = {
 
   theme: 'light',
   autoSwitchTheme: 2,
+  customCss: '',
 
   spellcheckerEnabled: false,
   spellcheckerNoUnderline: false,
