@@ -10,7 +10,7 @@ export default new Map([
   ['mt.hide-others', ''],
 
   // File menu
-  ['file.new-file', 'Ctrl+N'],
+  ['file.new-window', 'Ctrl+N'],
   ['file.new-tab', 'Ctrl+T'],
   ['file.open-file', 'Ctrl+O'],
   ['file.open-folder', 'Ctrl+Shift+O'],
@@ -23,6 +23,9 @@ export default new Map([
   ['file.close-tab', 'Ctrl+W'],
   ['file.close-window', 'Ctrl+Shift+W'],
   ['file.quit', 'Ctrl+Q'],
+
+  // File > Export submenu
+  ['file.export-file.pdf', 'Ctrl+Alt+E'],
 
   // Edit menu
   ['edit.undo', 'Ctrl+Z'],

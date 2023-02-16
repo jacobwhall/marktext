@@ -1,9 +1,12 @@
 import fs from 'fs-extra'
 import path from 'path'
-import { BrowserWindow, dialog, ipcMain, shell } from 'electron'
+import { BrowserWindow, app, dialog, ipcMain, shell } from 'electron'
 import log from 'electron-log'
 import { isDirectory, isFile, exists } from 'common/filesystem'
 import { MARKDOWN_EXTENSIONS, isMarkdownFile } from 'common/filesystem/paths'
+import { checkUpdates, userSetting } from './marktext'
+import { showTabBar } from './view'
+import { COMMANDS } from '../../commands'
 import { EXTENSION_HASN, PANDOC_EXTENSIONS, URL_REG } from '../../config'
 import { normalizeAndResolvePath, writeFile } from '../../filesystem'
 import { writeMarkdownFile } from '../../filesystem/markdown'
@@ -158,23 +161,23 @@ const handleResponseForSave = async (e, { id, filename, markdown, pathname, opti
 const showUnsavedFilesMessage = async (win, files) => {
   const { response } = await dialog.showMessageBox(win, {
     type: 'warning',
-    buttons: ['Save', 'Cancel', 'Don\'t save'],
+    buttons: ['Save', 'Don\'t save', 'Cancel'],
     defaultId: 0,
     message: `Do you want to save the changes you made to ${files.length} ${files.length === 1 ? 'file' : 'files'}?\n\n${files.map(f => f.filename).join('\n')}`,
     detail: 'Your changes will be lost if you don\'t save them.',
-    cancelId: 1,
+    cancelId: 2,
     noLink: true
   })
 
   switch (response) {
-    case 2:
-      return { needSave: false }
     case 0:
       return new Promise((resolve, reject) => {
         setTimeout(() => {
           resolve({ needSave: true })
         })
       })
+    case 1:
+      return { needSave: false }
     default:
       return null
   }
@@ -501,7 +504,7 @@ export const importFile = async win => {
   }
 }
 
-export const print = win => {
+export const printDocument = win => {
   if (win) {
     win.webContents.send('mt::show-export-dialog', 'print')
   }
@@ -545,6 +548,7 @@ export const openFileOrFolder = (win, pathname) => {
 export const newBlankTab = win => {
   if (win && win.webContents) {
     win.webContents.send('mt::new-untitled-tab')
+    showTabBar(win)
   }
 }
 
@@ -576,6 +580,12 @@ export const saveAs = win => {
   }
 }
 
+export const exportPDF = win => {
+  if (win && win.webContents) {
+    exportFile(win, 'pdf')
+  }
+}
+
 export const autoSave = (menuItem, browserWindow) => {
   const { checked } = menuItem
   ipcMain.emit('set-user-preference', { autoSave: checked })
@@ -595,4 +605,26 @@ export const rename = win => {
 
 export const clearRecentlyUsed = () => {
   ipcMain.emit('menu-clear-recently-used')
+}
+
+// --- Commands -------------------------------------------------------------
+
+export const loadFileCommands = commandManager => {
+  commandManager.add(COMMANDS.FILE_CHECK_UPDATE, checkUpdates)
+  commandManager.add(COMMANDS.FILE_CLOSE_TAB, closeTab)
+  commandManager.add(COMMANDS.FILE_CLOSE_WINDOW, closeWindow)
+  commandManager.add(COMMANDS.FILE_EXPORT_FILE, exportFile)
+  commandManager.add(COMMANDS.FILE_IMPORT_FILE, importFile)
+  commandManager.add(COMMANDS.FILE_MOVE_FILE, moveTo)
+  commandManager.add(COMMANDS.FILE_NEW_FILE, newEditorWindow)
+  commandManager.add(COMMANDS.FILE_NEW_TAB, newBlankTab)
+  commandManager.add(COMMANDS.FILE_OPEN_FILE, openFile)
+  commandManager.add(COMMANDS.FILE_OPEN_FOLDER, openFolder)
+  commandManager.add(COMMANDS.FILE_PREFERENCES, userSetting)
+  commandManager.add(COMMANDS.FILE_PRINT, printDocument)
+  commandManager.add(COMMANDS.FILE_QUIT, app.quit)
+  commandManager.add(COMMANDS.FILE_RENAME_FILE, rename)
+  commandManager.add(COMMANDS.FILE_SAVE, save)
+  commandManager.add(COMMANDS.FILE_SAVE_AS, saveAs)
+  commandManager.add(COMMANDS.FILE_EXPORT_FILE_PDF, exportPDF)
 }

@@ -176,6 +176,7 @@ export default {
     bus.$on('findPrev', this.listenFindPrev)
     document.addEventListener('click', this.docClick)
     document.addEventListener('keyup', this.docKeyup)
+    bus.$on('search-blur', this.blurSearch)
   },
 
   beforeDestroy () {
@@ -185,6 +186,7 @@ export default {
     bus.$off('findPrev', this.listenFindPrev)
     document.removeEventListener('click', this.docClick)
     document.removeEventListener('keyup', this.docKeyup)
+    bus.$off('search-blur', this.blurSearch)
   },
 
   methods: {
@@ -228,6 +230,10 @@ export default {
       this.emptySearch(true)
     },
 
+    blurSearch () {
+      this.emptySearch(true)
+    },
+
     emptySearch (selectHighlight = false) {
       this.showSearch = false
       const searchValue = this.searchValue = ''
@@ -260,6 +266,7 @@ export default {
       if (isRegexp) {
         // Handle invalid regexp.
         try {
+          // eslint-disable-next-line no-new
           new RegExp(searchValue)
           this.searchErrorMsg = ''
         } catch (err) {

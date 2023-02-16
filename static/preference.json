@@ -10,6 +10,7 @@
   "fileSortBy": "created",
   "startUpAction": "lastState",
   "defaultDirectoryToOpen": "",
+  "treePathExcludePatterns": [],
   "language": "en",
 
   "editorFontFamily": "Open Sans",
@@ -19,6 +20,7 @@
   "codeFontFamily": "DejaVu Sans Mono",
   "codeBlockLineNumbers": true,
   "trimUnnecessaryCodeBlockEmptyLines": true,
+  "wrapCodeBlocks": false,
   "editorLineWidth": "",
 
   "autoPairBracket": true,
@@ -51,11 +53,10 @@
 
   "theme": "light",
   "autoSwitchTheme": 2,
+  "customCss": "",
 
   "spellcheckerEnabled": false,
-  "spellcheckerIsHunspell": false,
   "spellcheckerNoUnderline": false,
-  "spellcheckerAutoDetectLanguage": false,
   "spellcheckerLanguage": "en-US",
 
   "sideBarVisibility": false,

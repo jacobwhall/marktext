@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import { isFile, isFile2, isSymbolicLink } from './index'
+import minimatch from 'minimatch'
 
 const isOsx = process.platform === 'darwin'
 
@@ -13,6 +14,7 @@ export const MARKDOWN_EXTENSIONS = Object.freeze([
   'mdwn',
   'mdtxt',
   'mdtext',
+  'mdx',
   'text',
   'txt'
 ])
@@ -118,4 +120,20 @@ export const getResourcesPath = () => {
     resPath = path.join(resPath, '../../../../resources')
   }
   return resPath
+}
+
+/**
+ * Returns true if the pathname matches one of the exclude patterns.
+ *
+ * @param {string} pathname Path of file or directory
+ * @param {string} patterns Glob expressions
+ */
+export const checkPathExcludePattern = (pathname, patterns) => {
+  if (!pathname || typeof pathname !== 'string') return false
+  for (const pattern of patterns) {
+    if (minimatch(pathname, pattern, { matchBase: true })) {
+      return true
+    }
+  }
+  return false
 }

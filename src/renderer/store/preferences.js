@@ -14,6 +14,7 @@ const state = {
   fileSortBy: 'created',
   startUpAction: 'lastState',
   defaultDirectoryToOpen: '',
+  treePathExcludePatterns: [],
   language: 'en',
 
   editorFontFamily: 'Open Sans',
@@ -23,6 +24,7 @@ const state = {
   codeFontFamily: 'DejaVu Sans Mono',
   codeBlockLineNumbers: true,
   trimUnnecessaryCodeBlockEmptyLines: true,
+  wrapCodeBlocks: true,
   editorLineWidth: '',
 
   autoPairBracket: true,
@@ -55,11 +57,10 @@ const state = {
 
   theme: 'light',
   autoSwitchTheme: 2,
+  customCss: '',
 
   spellcheckerEnabled: false,
-  spellcheckerIsHunspell: false, // macOS/Windows 10 only
   spellcheckerNoUnderline: false,
-  spellcheckerAutoDetectLanguage: false,
   spellcheckerLanguage: 'en-US',
 
   // Default values that are overwritten with the entries below.
@@ -117,7 +118,7 @@ const mutations = {
 }
 
 const actions = {
-  ASK_FOR_USER_PREFERENCE ({ commit, state, rootState }) {
+  ASK_FOR_USER_PREFERENCE ({ commit }) {
     ipcRenderer.send('mt::ask-for-user-preference')
     ipcRenderer.send('mt::ask-for-user-data')
 
@@ -143,15 +144,27 @@ const actions = {
     ipcRenderer.send('mt::select-default-directory-to-open')
   },
 
+  LISTEN_FOR_VIEW ({ commit, dispatch }) {
+    ipcRenderer.on('mt::show-command-palette', () => {
+      bus.$emit('show-command-palette')
+    })
+    ipcRenderer.on('mt::toggle-view-mode-entry', (event, entryName) => {
+      commit('TOGGLE_VIEW_MODE', entryName)
+      dispatch('DISPATCH_EDITOR_VIEW_STATE', { [entryName]: state[entryName] })
+    })
+  },
+
   // Toggle a view option and notify main process to toggle menu item.
-  LISTEN_TOGGLE_VIEW ({ commit, state }) {
+  LISTEN_TOGGLE_VIEW ({ commit, dispatch, state }) {
     bus.$on('view:toggle-view-entry', entryName => {
       commit('TOGGLE_VIEW_MODE', entryName)
-      const item = {}
-      item[entryName] = state[entryName]
-      const { windowId } = global.marktext.env
-      ipcRenderer.send('mt::view-layout-changed', windowId, item)
+      dispatch('DISPATCH_EDITOR_VIEW_STATE', { [entryName]: state[entryName] })
     })
+  },
+
+  DISPATCH_EDITOR_VIEW_STATE (_, viewState) {
+    const { windowId } = global.marktext.env
+    ipcRenderer.send('mt::view-layout-changed', windowId, viewState)
   }
 }
 

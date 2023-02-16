@@ -1,82 +1,7 @@
 ## Compare with `marked.js`
 
-Marked.js failed examples count: 38
+Marked.js failed examples count: 29
 MarkText failed examples count: 0
-
-**Example23**
-
-MarkText success and marked.js fail
-
-```markdown
-Markdown content
-[foo]
-
-[foo]: /bar\* "ti\*tle"
-
-Expected Html
-<p><a href="/bar*" title="ti*tle">foo</a></p>
-
-Actural Html
-<p><a href="/bar%5C*" title="ti\*tle">foo</a></p>
-
-marked.js html
-<p><a href="/bar%5C*" title="ti\*tle">foo</a></p>
-
-```
-
-**Example24**
-
-MarkText success and marked.js fail
-
-```markdown
-Markdown content
-\`\`\` foo\+bar
-foo
-\`\`\`
-
-Expected Html
-<pre><code class="language-foo+bar">foo
-</code></pre>
-
-Actural Html
-<pre><code class="fenced-code-block language-foo\+bar">foo</code></pre>
-
-marked.js html
-<pre><code class="language-foo\+bar">foo
-</code></pre>
-
-```
-
-**Example28**
-
-MarkText success and marked.js fail
-
-```markdown
-Markdown content
-&nbsp &x; &#; &#x;
-&#87654321;
-&#abcdef0;
-&ThisIsNotDefined; &hi?;
-
-Expected Html
-<p>&amp;nbsp &amp;x; &amp;#; &amp;#x;
-&amp;#87654321;
-&amp;#abcdef0;
-&amp;ThisIsNotDefined; &amp;hi?;</p>
-
-Actural Html
-<p>&amp;nbsp &x; &amp;#; &#x;
-&#87654321;
-&#abcdef0;
-&ThisIsNotDefined; &amp;hi?;</p>
-
-marked.js html
-<p>&amp;nbsp &x; &amp;#; &#x;
-&#87654321;
-&#abcdef0;
-&ThisIsNotDefined; &amp;hi?;</p>
-
-```
 
 **Example32**
 
@@ -118,173 +43,36 @@ marked.js html
 
 ```
 
-**Example34**
+**Example93**
 
 MarkText success and marked.js fail
 
 ```markdown
 Markdown content
-\`\`\` f&ouml;&ouml;
-foo
-\`\`\`
+> foo
+bar
+===
 
 Expected Html
-<pre><code class="language-föö">foo
-</code></pre>
+<blockquote>
+<p>foo
+bar
+===</p>
+</blockquote>
 
 Actural Html
-<pre><code class="fenced-code-block language-f&amp;ouml;&amp;ouml;">foo</code></pre>
+<blockquote>
+<p>foo
+bar
+===</p>
+</blockquote>
 
 marked.js html
-<pre><code class="language-f&amp;ouml;&amp;ouml;">foo
-</code></pre>
-
-```
-
-**Example81**
-
-MarkText success and marked.js fail
-
-```markdown
-Markdown content
-Foo *bar
-baz*
-====
-
-Expected Html
-<h1>Foo <em>bar
-baz</em></h1>
-
-Actural Html
-<p>Foo <em>bar
-baz</em>
-====</p>
-
-marked.js html
-<p>Foo <em>bar
-baz</em>
-====</p>
-
-```
-
-**Example82**
-
-MarkText success and marked.js fail
-
-```markdown
-Markdown content
-  Foo *bar
-baz*	
-====
-
-Expected Html
-<h1>Foo <em>bar
-baz</em></h1>
-
-Actural Html
-<p>  Foo <em>bar
-baz</em><br>====</p>
-
-marked.js html
-<p>  Foo <em>bar
-baz</em><br>====</p>
-
-```
-
-**Example95**
-
-MarkText success and marked.js fail
-
-```markdown
-Markdown content
-Foo
-Bar
----
-
-Expected Html
-<h2>Foo
-Bar</h2>
-
-Actural Html
-<p>Foo
-Bar</p>
-<hr>
-
-marked.js html
-<p>Foo
-Bar</p>
-<hr>
-
-```
-
-**Example195**
-
-MarkText success and marked.js fail
-
-```markdown
-Markdown content
-[Foo bar]:
-<my url>
-'title'
-
-[Foo bar]
-
-Expected Html
-<p><a href="my%20url" title="title">Foo bar</a></p>
-
-Actural Html
-<p>[Foo bar]:
-<my url>
-&#39;title&#39;</p>
-<p>[Foo bar]</p>
-
-marked.js html
-<p>[Foo bar]:
-<my url>
-&#39;title&#39;</p>
-<p>[Foo bar]</p>
-
-```
-
-**Example200**
-
-MarkText success and marked.js fail
-
-```markdown
-Markdown content
-[foo]: <>
-
-[foo]
-
-Expected Html
-<p><a href="">foo</a></p>
-
-Actural Html
-<p><a href="%3C">foo</a></p>
-
-marked.js html
-<p><a href="%3C">foo</a></p>
-
-```
-
-**Example202**
-
-MarkText success and marked.js fail
-
-```markdown
-Markdown content
-[foo]: /url\bar\*baz "foo\"bar\baz"
-
-[foo]
-
-Expected Html
-<p><a href="/url%5Cbar*baz" title="foo&quot;bar\baz">foo</a></p>
-
-Actural Html
-<p><a href="/url%5Cbar%5C*baz" title="foo\&quot;bar\baz">foo</a></p>
-
-marked.js html
-<p><a href="/url%5Cbar%5C*baz" title="foo\&quot;bar\baz">foo</a></p>
+<blockquote>
+<p>foo
+bar
+===</p>
+</blockquote>
 
 ```
 
@@ -836,4 +624,4 @@ marked.js html
 
 ```
 
-There are 38 examples are different with marked.js.
+There are 29 examples are different with marked.js.

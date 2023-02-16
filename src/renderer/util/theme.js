@@ -103,6 +103,24 @@ export const addThemeStyle = theme => {
   }
 }
 
+export const setWrapCodeBlocks = value => {
+  const CODE_WRAP_STYLE_ID = 'ag-code-wrap'
+  let result = ''
+  if (value) {
+    result = '.ag-code-content { display: block; white-space: pre-wrap; word-break: break-word; overflow: hidden; }'
+  } else {
+    result = '.ag-code-content { display: block; white-space: pre; word-break: break-word; overflow: auto; }'
+  }
+  let styleEle = document.querySelector(`#${CODE_WRAP_STYLE_ID}`)
+  if (!styleEle) {
+    styleEle = document.createElement('style')
+    styleEle.setAttribute('id', CODE_WRAP_STYLE_ID)
+    document.head.appendChild(styleEle)
+  }
+
+  styleEle.innerHTML = result
+}
+
 export const setEditorWidth = value => {
   const EDITOR_WIDTH_STYLE_ID = 'editor-width'
   let result = ''
@@ -148,6 +166,19 @@ font-size: ${codeFontSize}px;
 
 ${getEmojiPickerPatch()}
 `
+}
+
+export const addCustomStyle = options => {
+  const { customCss } = options
+  if (!customCss) return
+
+  let customStyleEle = document.querySelector('#custom-styles')
+  if (!customStyleEle) {
+    customStyleEle = document.createElement('style')
+    customStyleEle.id = 'custom-styles'
+    document.head.appendChild(customStyleEle)
+  }
+  customStyleEle.innerHTML = customCss
 }
 
 export const addElementStyle = () => {

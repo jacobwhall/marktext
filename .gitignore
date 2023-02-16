@@ -10,8 +10,10 @@ node_modules/
 npm-debug.log
 npm-debug.log.*
 yarn-error.log
+yarn.lock
 thumbs.db
 !.gitkeep
 .idea
 .env
 .eslintcache
+marktext.code-workspace

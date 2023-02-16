@@ -92,6 +92,11 @@
     "minimum": 1.2,
     "default": 1.6
   },
+  "wrapCodeBlocks": {
+    "description": "Editor--Wrap text inside code blocks",
+    "type": "boolean",
+    "default": true
+  },
   "editorLineWidth": {
     "description": "Editor--Defines the maximum editor area width. An empty string or suffixes of ch (characters), px (pixels) or % (percentage) are allowed.",
     "type": "string",
@@ -324,13 +329,13 @@
       2
     ]
   },
+  "customCss": {
+    "description": "Custom CSS--Custom CSS to apply to the current theme.",
+    "type": "string",
+    "default": ""
+  },
   "spellcheckerEnabled": {
     "description": "Spelling--Whether spell checking is enabled.",
-    "type": "boolean",
-    "default": false
-  },
-  "spellcheckerIsHunspell": {
-    "description": "Spelling--Whether Hunspell or the OS spell checker is used (macOS only).",
     "type": "boolean",
     "default": false
   },
@@ -339,13 +344,9 @@
     "type": "boolean",
     "default": false
   },
-  "spellcheckerAutoDetectLanguage": {
-    "description": "Spelling--Try to automatically identify the used language when typing.",
-    "type": "boolean",
-    "default": false
-  },
   "spellcheckerLanguage": {
     "description": "Spelling--The spell checker language",
+    "type": "string",
     "pattern": "^[a-z]{2,3}(?:[-](?:[0-9]|[a-zA-Z]){2,}){0,2}$",
     "default": "en-US"
   },

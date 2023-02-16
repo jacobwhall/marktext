@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import { addStyles, addThemeStyle } from '@/util/theme'
+import { addStyles, addThemeStyle, addCustomStyle } from '@/util/theme'
 import Recent from '@/components/recent'
 import EditorWithTabs from '@/components/editorWithTabs'
 import TitleBar from '@/components/titleBar'
@@ -78,6 +78,7 @@ export default {
       showTabBar: state => state.layout.showTabBar,
       sourceCode: state => state.preferences.sourceCode,
       theme: state => state.preferences.theme,
+      customCss: state => state.preferences.customCss,
       textDirection: state => state.preferences.textDirection
     }),
     ...mapState({
@@ -105,6 +106,13 @@ export default {
         addThemeStyle(value)
       }
     },
+    customCss: function (value, oldValue) {
+      if (value !== oldValue) {
+        addCustomStyle({
+          customCss: value
+        })
+      }
+    },
     zoom: function (zoom) {
       ipcRenderer.emit('mt::window-zoom', null, zoom)
     }
@@ -125,7 +133,6 @@ export default {
     dispatch('LISTEN_FOR_TWEET')
     // module: layout
     dispatch('LISTEN_FOR_LAYOUT')
-    dispatch('LISTEN_FOR_REQUEST_LAYOUT')
     // module: listenForMain
     dispatch('LISTEN_FOR_EDIT')
     dispatch('LISTEN_FOR_VIEW')
@@ -161,6 +168,8 @@ export default {
     dispatch('LISTEN_FOR_FILE_CHANGE')
     dispatch('LISTEN_WINDOW_ZOOM')
     dispatch('LISTEN_FOR_RELOAD_IMAGES')
+    dispatch('LISTEN_FOR_CONTEXT_MENU')
+
     // module: notification
     dispatch('LISTEN_FOR_NOTIFICATION')
 
