@@ -1,6 +1,7 @@
 # MarkText
 
 Original README.md translations:
+[:us:](docs/i18n/english.md#readme)
 [:cn:](docs/i18n/zh_cn.md#readme)
 [:taiwan:](docs/i18n/zh_tw.md#readme)
 [:poland:](docs/i18n/pl.md#readme)
@@ -14,14 +15,15 @@ Original README.md translations:
 
 [MarkText](https://github.com/marktext/marktext) is a markdown editor written by [Jocs](https://github.com/Jocs) and [contributors](https://github.com/marktext/marktext/graphs/contributors).
 
-This is a fork of [the official MarkText repository](https://github.com/marktext/marktext), where you can find unofficial releases and experimental development.
+This is a fork of [the official MarkText repository](https://github.com/marktext/marktext), where I've merged in a bunch of open PRs from the upstream repository.
+My intent is to keep Marktext alive while there is a lull in engagement from the official repo's owners.
+If the maintainers choose to bring that repository back to life, I'll sunset this fork in favor of theirs.
+
+**If you are good at building things for MacOS or Windows, please reach out. I'd like to publish multiplatform builds for each release, hopefully with GitHub Actions**
 
 ## Contributing
 
 All pull requests, issues, and private messages are welcome.
-
-That said, please consider checking in with the [upstream repository](https://github.com/marktext/marktext) first.
-If the maintainers choose to bring that repository back to life, I'll sunset this fork in favor of theirs.
 
 ## License
 
