@@ -6,7 +6,7 @@ if (nodeMajor < 14) {
   process.exit(1)
 }
 
-if (!/yarn\.js$/.test(process.env.npm_execpath)) {
+if (!/yarn$/.test(process.env.npm_execpath)) {
   console.error('[ERROR] Please use yarn to install dependencies.\n')
   process.exit(1)
 }
