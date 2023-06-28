@@ -25,6 +25,8 @@ If the maintainers choose to bring that repository back to life, I'll sunset thi
 
 All pull requests, issues, and private messages are welcome.
 
+We follow the [Contributor Covenant](https://www.contributor-covenant.org/) code of conduct [version 2.1](.github/CODE_OF_CONDUCT.md). Please review this document before engaging with this project.
+
 ## License
 
 Marktext uses the [MIT license](LICENSE).
