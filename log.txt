@@ -1,0 +1,53 @@
+[STARTED] Checking your system
+[STARTED] Checking git exists
+[STARTED] Checking node version
+[STARTED] Checking packageManager version
+[TITLE] Found git@2.34.1
+[SUCCESS] Found git@2.34.1
+[TITLE] Found node@18.16.1
+[SUCCESS] Found node@18.16.1
+[TITLE] Found yarn@3.6.0
+[SUCCESS] Found yarn@3.6.0
+[SUCCESS] Checking your system
+[STARTED] Locating application
+[SUCCESS] Locating application
+[STARTED] Loading configuration
+[SUCCESS] Loading configuration
+[STARTED] Preparing native dependencies
+[TITLE] Preparing native dependencies
+[TITLE] Preparing native dependencies: 0 / 1
+[TITLE] Preparing native dependencies: 1 / 1
+[TITLE] Preparing native dependencies: 1 / 2
+[TITLE] Preparing native dependencies: 2 / 2
+[TITLE] Preparing native dependencies: 2 / 3
+[TITLE] Preparing native dependencies: 3 / 3
+[TITLE] Preparing native dependencies: 3 / 4
+[TITLE] Preparing native dependencies: 4 / 4
+[SUCCESS] Preparing native dependencies: 4 / 4
+[STARTED] Running generateAssets hook
+[SUCCESS] Running generateAssets hook
+[STARTED] [plugin-vite] Launching dev servers for renderer process code
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+[SUCCESS] [plugin-vite] Launching dev servers for renderer process code
+[STARTED] [plugin-vite] Compiling main process code
+vite v4.3.9 building for development...
+
+watching for file changes...
+vite v4.3.9 building for development...
+
+watching for file changes...
+
+build started...
+
+build started...
+transforming...
+transforming...
+✓ 1 modules transformed.
+rendering chunks...
+computing gzip size...
+.vite/build/preload.js  0.04 kB │ gzip: 0.06 kB
+built in 569ms.
+✓ 91 modules transformed.
+[SUCCESS] [plugin-vite] Compiling main process code
+

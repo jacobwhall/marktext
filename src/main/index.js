@@ -1,4 +1,3 @@
-import './globalSetting'
 import path from 'path'
 import { app, dialog } from 'electron'
 import { initialize as remoteInitializeServer } from '@electron/remote/main'
@@ -25,6 +24,11 @@ const initializeLogger = appEnvironment => {
 if (!/^(darwin|win32|linux)$/i.test(process.platform)) {
   process.stdout.write(`Operating system "${process.platform}" is not supported! Please open an issue at "https://github.com/marktext/marktext".\n`)
   process.exit(1)
+}
+
+// Handle creating/removing shortcuts on Windows when installing/uninstalling.
+if (require('electron-squirrel-startup')) {
+  app.quit()
 }
 
 setupExceptionHandler()

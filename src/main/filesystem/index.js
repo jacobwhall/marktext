@@ -1,6 +1,6 @@
 import fs from 'fs-extra'
 import path from 'path'
-import { isDirectory, isFile, isSymbolicLink } from 'common/filesystem'
+import { isDirectory, isFile, isSymbolicLink } from '../../common/filesystem'
 
 /**
  * Normalize the path into an absolute path and resolves the link target if needed.

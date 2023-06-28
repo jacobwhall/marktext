@@ -34,9 +34,9 @@
 </template>
 
 <script>
-import bus from '@/bus'
+import bus from '../../bus'
 import { ipcRenderer } from 'electron'
-import importIcon from '@/assets/icons/import_file.svg'
+import importIcon from '../../assets/icons/import_file.svg'
 
 export default {
   data () {

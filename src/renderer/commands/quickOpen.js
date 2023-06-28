@@ -2,8 +2,8 @@ import path from 'path'
 import { ipcRenderer } from 'electron'
 import { isChildOfDirectory, hasMarkdownExtension, MARKDOWN_INCLUSIONS } from '../../common/filesystem/paths'
 import bus from '../bus'
-import { delay } from '@/util'
-import FileSearcher from '@/node/fileSearcher'
+import { delay } from '../util'
+import FileSearcher from '../node/fileSearcher'
 
 const SPECIAL_CHARS = /[\[\]\\^$.\|\?\*\+\(\)\/]{1}/g // eslint-disable-line no-useless-escape
 

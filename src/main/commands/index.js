@@ -1,4 +1,4 @@
-import COMMAND_CONSTANTS from 'common/commands/constants'
+import COMMAND_CONSTANTS from '../../common/commands/constants'
 import { loadFileCommands } from './file'
 import { loadTabCommands } from './tab'
 

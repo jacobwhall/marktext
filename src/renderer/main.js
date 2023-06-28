@@ -36,7 +36,7 @@ import {
 } from 'element-ui'
 import services from './services'
 import routes from './router'
-import { addElementStyle } from '@/util/theme'
+import { addElementStyle } from './util/theme'
 
 import './assets/styles/index.css'
 import './assets/styles/printService.css'

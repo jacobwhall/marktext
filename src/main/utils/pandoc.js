@@ -1,7 +1,7 @@
 // Copy from https://github.com/utatti/simple-pandoc/blob/master/index.js
 import { spawn } from 'child_process'
 import commandExists from 'command-exists'
-import { isFile2 } from 'common/filesystem'
+import { isFile2 } from '../../common/filesystem'
 
 const pandocCommand = 'pandoc'
 

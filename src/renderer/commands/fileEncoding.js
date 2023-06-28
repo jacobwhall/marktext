@@ -1,6 +1,6 @@
 import { ipcRenderer } from 'electron'
-import { ENCODING_NAME_MAP, getEncodingName } from 'common/encoding'
-import { delay } from '@/util'
+import { ENCODING_NAME_MAP, getEncodingName } from '../../common/encoding'
+import { delay } from '../util'
 import bus from '../bus'
 
 class FileEncodingCommand {

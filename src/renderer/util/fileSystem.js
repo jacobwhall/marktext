@@ -6,7 +6,7 @@ import cp from 'child_process'
 import { tmpdir } from 'os'
 import dayjs from 'dayjs'
 import { Octokit } from '@octokit/rest'
-import { isImageFile } from 'common/filesystem/paths'
+import { isImageFile } from '../../common/filesystem/paths'
 import { isWindows } from './index'
 
 export const create = async (pathname, type) => {

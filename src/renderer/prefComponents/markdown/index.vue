@@ -113,11 +113,11 @@
 </template>
 
 <script>
-import Compound from '../common/compound'
-import Separator from '../common/separator'
+import Compound from '../common/compound/index.vue'
+import Separator from '../common/separator/index.vue'
 import { mapState } from 'vuex'
-import Bool from '../common/bool'
-import CurSelect from '../common/select'
+import Bool from '../common/bool/index.vue'
+import CurSelect from '../common/select/index.vue'
 import {
   bulletListMarkerOptions,
   orderListDelimiterOptions,

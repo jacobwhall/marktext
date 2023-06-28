@@ -1,29 +1,37 @@
 module.exports = {
-  root: true,
-  parserOptions: {
-    parser: '@babel/eslint-parser',
-    ecmaVersion: 11,
-    ecmaFeatures: {
-      impliedStrict: true
-    },
-    sourceType: 'module'
-  },
   env: {
     browser: true,
-    es6: true,
+    es2021: true,
     node: true
   },
   extends: [
     'standard',
-    'eslint:recommended',
-    'plugin:vue/base',
-    'plugin:import/errors',
-    'plugin:import/warnings'
+    'plugin:vue/vue3-essential'
+  ],
+  overrides: [
+    {
+      env: {
+        node: true
+      },
+      files: [
+        '.eslintrc.{js,cjs}'
+      ],
+      parserOptions: {
+        sourceType: 'script'
+      }
+    }
   ],
   globals: {
     __static: true
   },
-  plugins: ['html', 'vue'],
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module'
+  },
+  plugins: [
+    'html',
+    'vue'
+  ],
   rules: {
     // Two spaces but disallow semicolons
     indent: ['error', 2, { 'SwitchCase': 1, 'ignoreComments': true }],

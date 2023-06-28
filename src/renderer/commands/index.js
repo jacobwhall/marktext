@@ -2,7 +2,7 @@
 import { ipcRenderer, shell } from 'electron'
 import { getCurrentWindow } from '@electron/remote'
 import bus from '../bus'
-import { delay, isOsx } from '@/util'
+import { delay, isOsx } from '../util'
 import { isUpdatable } from './utils'
 import getCommandDescriptionById from './descriptions'
 

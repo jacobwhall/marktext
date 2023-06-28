@@ -1,7 +1,7 @@
 import { clipboard, ipcRenderer, shell, webFrame } from 'electron'
 import path from 'path'
 import equal from 'deep-equal'
-import { isSamePathSync } from 'common/filesystem/paths'
+import { isSamePathSync } from '../../common/filesystem/paths'
 import bus from '../bus'
 import { hasKeys, getUniqueId } from '../util'
 import listToTree from '../util/listToTree'

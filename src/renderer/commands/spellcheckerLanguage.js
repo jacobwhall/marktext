@@ -1,8 +1,8 @@
 import bus from '../bus'
-import notice from '@/services/notification'
-import { delay } from '@/util'
-import { SpellChecker } from '@/spellchecker'
-import { getLanguageName } from '@/spellchecker/languageMap'
+import notice from '../services/notification'
+import { delay } from '../util'
+import { SpellChecker } from '../spellchecker'
+import { getLanguageName } from '../spellchecker/languageMap'
 
 // Command to switch the spellchecker language
 class SpellcheckerLanguageCommand {

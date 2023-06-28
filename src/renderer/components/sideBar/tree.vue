@@ -87,7 +87,7 @@ import OpenedFile from './treeOpenedTab.vue'
 import { mapState } from 'vuex'
 import bus from '../../bus'
 import { createFileOrDirectoryMixins } from '../../mixins'
-import FolderIcon from '@/assets/icons/undraw_folder.svg'
+import FolderIcon from '../../assets/icons/undraw_folder.svg'
 
 export default {
   mixins: [createFileOrDirectoryMixins],

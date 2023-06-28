@@ -19,10 +19,10 @@
 </template>
 
 <script>
-import Separator from '../common/separator'
-import Uploader from './components/uploader'
-import CurSelect from '@/prefComponents/common/select'
-import FolderSetting from './components/folderSetting'
+import Separator from '../common/separator/index.vue'
+import Uploader from './components/uploader/index.vue'
+import CurSelect from '../../prefComponents/common/select/index.vue'
+import FolderSetting from './components/folderSetting/index.vue'
 import { imageActions } from './config'
 
 export default {

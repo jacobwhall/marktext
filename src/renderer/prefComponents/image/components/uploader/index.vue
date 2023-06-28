@@ -72,10 +72,10 @@
 import { shell } from 'electron'
 import services, { isValidService } from './services.js'
 import legalNoticesCheckbox from './legalNoticesCheckbox'
-import { isFileExecutableSync } from '@/util/fileSystem'
-import CurSelect from '@/prefComponents/common/select'
+import { isFileExecutableSync } from '../../../../util/fileSystem'
+import CurSelect from '../../../../prefComponents/common/select'
 import commandExists from 'command-exists'
-import notice from '@/services/notification'
+import notice from '../../../../services/notification'
 
 export default {
   components: {

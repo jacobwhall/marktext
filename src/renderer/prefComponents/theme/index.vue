@@ -39,9 +39,9 @@
 import { mapState } from 'vuex'
 import themeMd from './theme.md'
 import { autoSwitchThemeOptions, themes } from './config'
-import markdownToHtml from '@/util/markdownToHtml'
-import CurSelect from '../common/select'
-import Separator from '../common/separator'
+import markdownToHtml from '../../util/markdownToHtml'
+import CurSelect from '../common/select/index.vue'
+import Separator from '../common/separator/index.vue'
 
 export default {
   components: {
