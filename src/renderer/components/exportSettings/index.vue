@@ -225,11 +225,11 @@ import fsPromises from 'fs/promises'
 import path from 'path'
 import { isDirectory, isFile } from '../../../common/filesystem'
 import bus from '../../bus'
-import Bool from '../../prefComponents/common/bool'
-import CurSelect from '../../prefComponents/common/select'
-import FontTextBox from '../../prefComponents/common/fontTextBox'
-import Range from '../../prefComponents/common/range'
-import TextBox from '../../prefComponents/common/textBox'
+import Bool from '../../prefComponents/common/bool/index.vue'
+import CurSelect from '../../prefComponents/common/select/index.vue'
+import FontTextBox from '../../prefComponents/common/fontTextBox/index.vue'
+import Range from '../../prefComponents/common/range/index.vue'
+import TextBox from '../../prefComponents/common/textBox/index.vue'
 import {
   pageSizeList,
   headerFooterTypes,

@@ -4915,6 +4915,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eve@npm:~0.5.1":
+  version: 0.5.4
+  resolution: "eve@npm:0.5.4"
+  checksum: 217ebf167cabaed9056733044a34809e483a58d96a1c1f925e3de99e60f501701622f359f17e5d68fbba0e4fd39391cc62ad284bffcf714efba32b2eee1f5899
+  languageName: node
+  linkType: hard
+
 "eventemitter3@npm:^4.0.0":
   version: 4.0.7
   resolution: "eventemitter3@npm:4.0.7"
@@ -7640,6 +7647,7 @@ __metadata:
     require-dir: ^1.2.0
     snabbdom: ^3.3.1
     snabbdom-to-html: ^7.0.0
+    snapsvg: ^0.5.1
     source-map-support: ^0.5.21
     stacktrace-parser: ^0.1.10
     svgo: ^2.8.0
@@ -10114,6 +10122,15 @@ __metadata:
   version: 3.5.1
   resolution: "snabbdom@npm:3.5.1"
   checksum: 8f3512c3e1c89deda0db4a185012dc6929a64b46c8ba44e5c7ed51d77c13d389a3605f5914af2c158d9f4a8c23b7face831d9802277fffb345a6fa1f1e330427
+  languageName: node
+  linkType: hard
+
+"snapsvg@npm:^0.5.1":
+  version: 0.5.1
+  resolution: "snapsvg@npm:0.5.1"
+  dependencies:
+    eve: ~0.5.1
+  checksum: 776121c08903c76e6e4c6a6620c59540879698d72a3a8125961afbde3b218139b0641ca786aac48de2026d8ac27d9a4457f6e88096fc478a8c4e45e261c7482d
   languageName: node
   linkType: hard
 

@@ -8,7 +8,7 @@
 
 <script>
 import codeMirror, { setMode, setCursorAtLastLine, setTextDirection } from '../../codeMirror'
-import { wordCount as getWordCount } from '../../..muya/lib/utils'
+import { wordCount as getWordCount } from '../../../muya/lib/utils'
 import { mapState } from 'vuex'
 import { adjustCursor } from '../../util'
 import bus from '../../bus'

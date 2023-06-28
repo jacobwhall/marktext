@@ -1,5 +1,5 @@
 import { ipcRenderer } from 'electron'
-import { isEqualAccelerator } from 'common/keybinding'
+import { isEqualAccelerator } from '../../../common/keybinding'
 import getCommandDescriptionById from '../../commands/descriptions'
 import { isOsx } from '../../util'
 
