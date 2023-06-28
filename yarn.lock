@@ -2117,7 +2117,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bindings@npm:^1.3.0":
+"bindings@npm:1.5.0, bindings@npm:^1.3.0":
   version: 1.5.0
   resolution: "bindings@npm:1.5.0"
   dependencies:
@@ -5320,16 +5320,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fontmanager-redux@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "fontmanager-redux@npm:1.1.0"
-  dependencies:
-    node-addon-api: ^3.0.2
-    node-gyp: latest
-  checksum: 12645f9d80d4e42e4802e513d02075523eea2820eebcac579fd9a235e247529989c9842da8819df2efaaba075ad377172af9a2de161c6d359451140dcf8c2f5f
-  languageName: node
-  linkType: hard
-
 "for-each@npm:^0.3.3":
   version: 0.3.3
   resolution: "for-each@npm:0.3.3"
@@ -7612,7 +7602,6 @@ __metadata:
     eslint-plugin-vue: latest
     execall: ^2.0.0
     flowchart.js: ^1.17.1
-    fontmanager-redux: ^1.1.0
     fs-extra: ^10.0.1
     fuzzaldrin: ^2.1.0
     github-markdown-css: ^3.0.1
@@ -7637,6 +7626,7 @@ __metadata:
     mocha: ^9.2.2
     native-keymap: ^3.3.0
     node-fetch: ^2.6.7
+    node-system-fonts: ^1.0.1
     path-browserify: ^1.0.1
     playwright: ^1.20.0
     plist: ^3.0.4
@@ -8037,6 +8027,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"nan@npm:>=2.14.1":
+  version: 2.17.0
+  resolution: "nan@npm:2.17.0"
+  dependencies:
+    node-gyp: latest
+  checksum: ec609aeaf7e68b76592a3ba96b372aa7f5df5b056c1e37410b0f1deefbab5a57a922061e2c5b369bae9c7c6b5e6eecf4ad2dac8833a1a7d3a751e0a7c7f849ed
+  languageName: node
+  linkType: hard
+
 "nanoid@npm:3.3.1":
   version: 3.3.1
   resolution: "nanoid@npm:3.3.1"
@@ -8158,6 +8157,17 @@ __metadata:
   version: 2.0.12
   resolution: "node-releases@npm:2.0.12"
   checksum: b8c56db82c4642a0f443332b331a4396dae452a2ac5a65c8dbd93ef89ecb2fbb0da9d42ac5366d4764973febadca816cf7587dad492dce18d2a6b2af59cda260
+  languageName: node
+  linkType: hard
+
+"node-system-fonts@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "node-system-fonts@npm:1.0.1"
+  dependencies:
+    bindings: 1.5.0
+    nan: ">=2.14.1"
+    node-gyp: latest
+  checksum: d0970380f47ba06c06a5f2c7fa9124a15d5660eb3fc575b4b3d9cfef9c0323848cf0706270ba3a3cc64e0ee19eab9e9b677b6311d9a2a46e7f31e0c813b948d5
   languageName: node
   linkType: hard
 
