@@ -1,7 +1,7 @@
 import path from 'path'
 import { app } from 'electron'
 import os from 'os'
-import { isDirectory } from 'common/filesystem'
+import { isDirectory } from '../../common/filesystem'
 import parseArgs from './parser'
 import { getPath } from '../utils'
 

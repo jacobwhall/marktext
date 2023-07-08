@@ -1,10 +1,10 @@
-import GeneralIcon from '@/assets/icons/pref_general.svg'
-import EditorIcon from '@/assets/icons/pref_editor.svg'
-import MarkdownIcon from '@/assets/icons/pref_markdown.svg'
-import ThemeIcon from '@/assets/icons/pref_theme.svg'
-import ImageIcon from '@/assets/icons/pref_image.svg'
-import SpellIcon from '@/assets/icons/pref_spellcheck.svg'
-import KeyBindingIcon from '@/assets/icons/pref_key_binding.svg'
+import GeneralIcon from '../../assets/icons/pref_general.svg'
+import EditorIcon from '../../assets/icons/pref_editor.svg'
+import MarkdownIcon from '../../assets/icons/pref_markdown.svg'
+import ThemeIcon from '../../assets/icons/pref_theme.svg'
+import ImageIcon from '../../assets/icons/pref_image.svg'
+import SpellIcon from '../../assets/icons/pref_spellcheck.svg'
+import KeyBindingIcon from '../../assets/icons/pref_key_binding.svg'
 
 import preferences from '../../../main/preferences/schema'
 

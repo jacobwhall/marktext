@@ -1,6 +1,7 @@
-import fs from 'fs-extra'
-import path from 'path'
-import { isDirectory, isFile, isSymbolicLink } from 'common/filesystem'
+import fs from 'fs/promises'
+import path, { dirname } from 'path'
+import { isDirectory, isFile, isSymbolicLink } from '../../common/filesystem'
+import { mkdirp } from 'mkdirp'
 
 /**
  * Normalize the path into an absolute path and resolves the link target if needed.
@@ -22,11 +23,12 @@ export const normalizeAndResolvePath = pathname => {
   return path.resolve(pathname)
 }
 
-export const writeFile = (pathname, content, extension, options = 'utf-8') => {
+export const writeFile = async (pathname, content, extension, options = 'utf-8') => {
   if (!pathname) {
     return Promise.reject(new Error('[ERROR] Cannot save file without path.'))
   }
   pathname = !extension || pathname.endsWith(extension) ? pathname : `${pathname}${extension}`
 
-  return fs.outputFile(pathname, content, options)
+  await mkdirp(dirname(pathname))
+  return fs.writeFile(pathname, content, options)
 }

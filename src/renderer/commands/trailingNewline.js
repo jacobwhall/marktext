@@ -1,5 +1,5 @@
 import { ipcRenderer } from 'electron'
-import { delay } from '@/util'
+import { delay } from '../util'
 import bus from '../bus'
 
 const descriptions = [

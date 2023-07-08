@@ -1,5 +1,5 @@
 import { rgPath } from 'vscode-ripgrep'
-import EnvPaths from 'common/envPaths'
+import EnvPaths from '../../common/envPaths'
 
 // // "vscode-ripgrep" is unpacked out of asar because of the binary.
 const rgDiskPath = rgPath.replace(/\bapp\.asar\b/, 'app.asar.unpacked')

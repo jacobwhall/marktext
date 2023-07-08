@@ -24,7 +24,7 @@
 <script>
 import { mapState } from 'vuex'
 import bus from '../../bus'
-import EmptyIcon from '@/assets/icons/undraw_toc_empty.svg'
+import EmptyIcon from '../../assets/icons/undraw_toc_empty.svg'
 
 export default {
   data () {

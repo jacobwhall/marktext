@@ -37,11 +37,12 @@
 
 <script>
 import { mapState } from 'vuex'
-import themeMd from './theme.md'
 import { autoSwitchThemeOptions, themes } from './config'
-import markdownToHtml from '@/util/markdownToHtml'
-import CurSelect from '../common/select'
-import Separator from '../common/separator'
+import markdownToHtml from '../../util/markdownToHtml'
+import CurSelect from '../common/select/index.vue'
+import Separator from '../common/separator/index.vue'
+import { readFile } from 'fs/promises'
+import { resolve } from 'path'
 
 export default {
   components: {
@@ -61,9 +62,10 @@ export default {
       customCss: state => state.preferences.customCss
     })
   },
-  created () {
+  async created () {
     this.$nextTick(async () => {
       const newThemes = []
+      const themeMd = await readFile(resolve(__dirname, './theme.md'))
       for (const theme of themes) {
         const html = await markdownToHtml(themeMd.replace(/{theme}/, theme.name))
         newThemes.push({

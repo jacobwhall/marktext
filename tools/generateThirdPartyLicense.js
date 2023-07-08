@@ -2,7 +2,7 @@
 
 const path = require('path')
 const fs = require('fs')
-const thirdPartyChecker = require('../.electron-vue/thirdPartyChecker.js')
+const thirdPartyChecker = require('./thirdPartyChecker.js')
 const rootDir = path.resolve(__dirname, '..')
 
 const additionalPackages = {

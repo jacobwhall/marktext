@@ -37,25 +37,25 @@
 </template>
 
 <script>
-import { addStyles, addThemeStyle, addCustomStyle } from '@/util/theme'
-import Recent from '@/components/recent'
-import EditorWithTabs from '@/components/editorWithTabs'
-import TitleBar from '@/components/titleBar'
-import SideBar from '@/components/sideBar'
-import AboutDialog from '@/components/about'
-import CommandPalette from '@/components/commandPalette'
-import ExportSettingDialog from '@/components/exportSettings'
-import Rename from '@/components/rename'
-import Tweet from '@/components/tweet'
-import ImportModal from '@/components/import'
-import { loadingPageMixins } from '@/mixins'
+import { addStyles, addThemeStyle, addCustomStyle } from '../util/theme'
+import Recent from '../components/recent/index.vue'
+import EditorWithTabs from '../components/editorWithTabs/index.vue'
+import TitleBar from '../components/titleBar/index.vue'
+import SideBar from '../components/sideBar/index.vue'
+import AboutDialog from '../components/about/index.vue'
+import CommandPalette from '../components/commandPalette/index.vue'
+import ExportSettingDialog from '../components/exportSettings/index.vue'
+import Rename from '../components/rename/index.vue'
+import Tweet from '../components/tweet/index.vue'
+import ImportModal from '../components/import/index.vue'
+import { loadingPageMixins } from '../mixins'
 import { mapState } from 'vuex'
-import bus from '@/bus'
-import { DEFAULT_STYLE } from '@/config'
+import bus from '../bus'
+import { DEFAULT_STYLE } from '../config'
 import { ipcRenderer } from 'electron'
 
 export default {
-  name: 'marktext',
+  name: 'mark-text',
   components: {
     Recent,
     EditorWithTabs,

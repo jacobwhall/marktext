@@ -103,7 +103,7 @@ import { getCurrentWindow, Menu as RemoteMenu } from '@electron/remote'
 import { mapState } from 'vuex'
 import { minimizePath, restorePath, maximizePath, closePath } from '../../assets/window-controls.js'
 import { PATH_SEPARATOR } from '../../config'
-import { isOsx } from '@/util'
+import { isOsx } from '../../util'
 
 export default {
   data () {

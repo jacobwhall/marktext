@@ -7,6 +7,7 @@ import log from 'electron-log'
 import { isWindows } from '../config'
 import { hasSameKeys } from '../utils'
 import schema from './schema'
+import __static from '../utils/static'
 
 const PREFERENCES_FILE_NAME = 'preferences'
 
@@ -29,7 +30,7 @@ class Preference extends EventEmitter {
       name: PREFERENCES_FILE_NAME
     })
 
-    this.staticPath = path.join(__static, 'preference.json')
+    this.staticPath = path.join(__static(), 'preference.json')
     this.init()
   }
 

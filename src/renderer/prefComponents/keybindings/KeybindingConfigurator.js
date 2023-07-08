@@ -1,7 +1,7 @@
 import { ipcRenderer } from 'electron'
-import { isEqualAccelerator } from 'common/keybinding'
-import getCommandDescriptionById from '@/commands/descriptions'
-import { isOsx } from '@/util'
+import { isEqualAccelerator } from '../../../common/keybinding'
+import getCommandDescriptionById from '../../commands/descriptions'
+import { isOsx } from '../../util'
 
 const SHORTCUT_TYPE_DEFAULT = 0
 const SHORTCUT_TYPE_USER = 1

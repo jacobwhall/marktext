@@ -14,12 +14,12 @@
 
 <script>
 import { mapState } from 'vuex'
-import TitleBar from '@/prefComponents/common/titlebar'
-import SideBar from '@/prefComponents/sideBar'
-import { loadingPageMixins } from '@/mixins'
-import { addThemeStyle } from '@/util/theme'
-import { DEFAULT_STYLE } from '@/config'
-import { isOsx } from '@/util'
+import TitleBar from '../prefComponents/common/titlebar.vue'
+import SideBar from '../prefComponents/sideBar/index.vue'
+import { loadingPageMixins } from '../mixins'
+import { addThemeStyle } from '../util/theme'
+import { DEFAULT_STYLE } from '../config'
+import { isOsx } from '../util'
 
 export default {
   data () {

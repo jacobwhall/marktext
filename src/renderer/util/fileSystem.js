@@ -1,28 +1,32 @@
-import path from 'path'
+import path, { dirname } from 'path'
 import crypto from 'crypto'
-import fs from 'fs-extra'
-import { statSync, constants } from 'fs'
+import { statSync } from 'fs'
+import fs, { constants } from 'fs/promises'
 import cp from 'child_process'
 import { tmpdir } from 'os'
 import dayjs from 'dayjs'
 import { Octokit } from '@octokit/rest'
-import { isImageFile } from 'common/filesystem/paths'
+import { isImageFile } from '../../common/filesystem/paths'
 import { isWindows } from './index'
+import { mkdirp } from 'mkdirp'
 
 export const create = async (pathname, type) => {
-  return type === 'directory'
-    ? fs.ensureDir(pathname)
-    : fs.outputFile(pathname, '')
+  if (type === 'directory') {
+    await mkdirp(pathname)
+  } else {
+    await mkdirp(dirname(pathname))
+    return fs.writeFile(pathname, '')
+  }
 }
 
 export const paste = async ({ src, dest, type }) => {
   return type === 'cut'
-    ? fs.move(src, dest)
-    : fs.copy(src, dest)
+    ? fs.rename(src, dest)
+    : fs.cp(src, dest)
 }
 
 export const rename = async (src, dest) => {
-  return fs.move(src, dest)
+  return fs.rename(src, dest)
 }
 
 export const getHash = (content, encoding, type) => {
@@ -55,8 +59,8 @@ export const moveToRelativeFolder = async (cwd, relativeName, filePath, imagePat
   //  - root directory + relative directory name
   const absPath = path.resolve(cwd, relativeName)
   const dstPath = path.resolve(absPath, path.basename(imagePath))
-  await fs.ensureDir(absPath)
-  await fs.move(imagePath, dstPath, { overwrite: true })
+  await mkdirp(absPath)
+  await fs.mv(imagePath, dstPath, { overwrite: true })
 
   // Find relative path between given file and saved image.
   const dstRelPath = path.relative(path.dirname(filePath), dstPath)
@@ -69,7 +73,7 @@ export const moveToRelativeFolder = async (cwd, relativeName, filePath, imagePat
 }
 
 export const moveImageToFolder = async (pathname, image, outputDir) => {
-  await fs.ensureDir(outputDir)
+  await mkdirp(outputDir)
   const isPath = typeof image === 'string'
   if (isPath) {
     const dirname = path.dirname(pathname)
@@ -85,7 +89,7 @@ export const moveImageToFolder = async (pathname, image, outputDir) => {
       const hash = getContentHash(imagePath)
       // To avoid name conflict.
       const hashFilePath = path.join(outputDir, `${hash}${extname}`)
-      await fs.copy(imagePath, hashFilePath)
+      await fs.cp(imagePath, hashFilePath)
       return hashFilePath
     } else {
       return Promise.resolve(image)
@@ -237,7 +241,7 @@ export const uploadImage = async (pathname, image, preferences) => {
   return promise
 }
 
-export const isFileExecutableSync = (filepath) => {
+export const isFileExecutableSync = async (filepath) => {
   try {
     const stat = statSync(filepath)
     if (process.platform === 'win32') {

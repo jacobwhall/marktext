@@ -101,7 +101,7 @@ export default {
   },
   mounted () {
     // Delay load native library because it's not needed for the editor and causes a delay.
-    const fontManager = require('fontmanager-redux')
+    const fontManager = require('node-system-fonts')
     const { onlyMonospace } = this
     const buf = fontManager.getAvailableFontsSync()
       .filter(f => f.family && (!onlyMonospace || (onlyMonospace && f.monospace)))

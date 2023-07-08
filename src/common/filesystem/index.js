@@ -1,6 +1,7 @@
-import fs from 'fs-extra'
+import fs from 'fs'
 import fsPromises from 'fs/promises'
 import path from 'path'
+import { mkdirpSync } from 'mkdirp'
 
 /**
  * Test whether or not the given path exists.
@@ -24,7 +25,7 @@ export const exists = async p => {
  */
 export const ensureDirSync = dirPath => {
   try {
-    fs.ensureDirSync(dirPath)
+    mkdirpSync(dirPath)
   } catch (e) {
     if (e.code !== 'EEXIST') {
       throw e

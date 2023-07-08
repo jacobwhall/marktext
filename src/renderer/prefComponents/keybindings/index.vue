@@ -50,11 +50,11 @@
 import { ipcRenderer, shell } from 'electron'
 import log from 'electron-log'
 import { setKeyboardLayout } from '@hfelix/electron-localshortcut'
-import Compound from '../common/compound'
-import Separator from '../common/separator'
+import Compound from '../common/compound/index.vue'
+import Separator from '../common/separator/index.vue'
 import KeyInputDialog from './key-input-dialog.vue'
 import KeybindingConfigurator from './KeybindingConfigurator'
-import notice from '@/services/notification'
+import notice from '../../services/notification'
 
 export default {
   components: {

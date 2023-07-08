@@ -1,5 +1,5 @@
 import { ipcRenderer } from 'electron'
-import { isOsx } from '@/util'
+import { isOsx } from '../util'
 
 /**
  * High level spell checker API based on Chromium built-in spell checker.

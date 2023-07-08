@@ -6,8 +6,8 @@ import keytar from 'keytar'
 import schema from './schema'
 import Store from 'electron-store'
 import log from 'electron-log'
-import { ensureDirSync } from 'common/filesystem'
-import { IMAGE_EXTENSIONS } from 'common/filesystem/paths'
+import { ensureDirSync } from '../../common/filesystem'
+import { IMAGE_EXTENSIONS } from '../../common/filesystem/paths'
 
 const DATA_CENTER_NAME = 'dataCenter'
 

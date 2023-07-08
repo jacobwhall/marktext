@@ -118,9 +118,9 @@
 <script>
 import bus from '../../bus'
 import { mapState } from 'vuex'
-import FindCaseIcon from '@/assets/icons/searchIcons/iconCase.svg'
-import FindWordIcon from '@/assets/icons/searchIcons/iconWord.svg'
-import FindRegexIcon from '@/assets/icons/searchIcons/iconRegex.svg'
+import FindCaseIcon from '../../assets/icons/searchIcons/iconCase.svg'
+import FindWordIcon from '../../assets/icons/searchIcons/iconWord.svg'
+import FindRegexIcon from '../../assets/icons/searchIcons/iconRegex.svg'
 
 export default {
   data () {

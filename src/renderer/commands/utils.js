@@ -1,5 +1,5 @@
 import path from 'path'
-import { isFile } from 'common/filesystem'
+import { isFile } from '../../common/filesystem'
 
 /// Check whether the package is updatable at runtime.
 export const isUpdatable = () => {

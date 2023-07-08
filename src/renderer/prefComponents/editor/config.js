@@ -1,4 +1,4 @@
-import { ENCODING_NAME_MAP } from 'common/encoding'
+import { ENCODING_NAME_MAP } from '../../../common/encoding'
 
 export const tabSizeOptions = [{
   label: '1',

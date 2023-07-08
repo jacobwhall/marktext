@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import ContentIcon from '@/assets/icons/undraw_content.svg'
+import ContentIcon from '../../assets/icons/undraw_content.svg'
 
 export default {
   data () {

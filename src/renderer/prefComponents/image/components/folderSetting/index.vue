@@ -31,9 +31,9 @@
 <script>
 import { mapState } from 'vuex'
 import { shell } from 'electron'
-import Bool from '@/prefComponents/common/bool'
-import Compound from '@/prefComponents/common/compound'
-import TextBox from '@/prefComponents/common/textBox'
+import Bool from '../../../../prefComponents/common/bool/index.vue'
+import Compound from '../../../../prefComponents/common/compound/index.vue'
+import TextBox from '../../../../prefComponents/common/textBox/index.vue'
 
 export default {
   components: {

@@ -61,12 +61,6 @@
         }
       }
     </style>
-    <% if (htmlWebpackPlugin.options.nodeModules) { %>
-      <!-- Add `node_modules/` to global paths so `require` works properly in development -->
-      <script>
-        require('module').globalPaths.push('<%= htmlWebpackPlugin.options.nodeModules.replace(/\\/g, '\\\\') %>')
-      </script>
-    <% } %>
   </head>
   <body autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
     <!-- Vue app -->
@@ -84,11 +78,11 @@
       const params = new URLSearchParams(window.location.search)
       const THEMES_COLOR = {
         'one-dark': 'rgba(77, 120, 204, 1)',
-        'dark': '#409eff',
-        'graphite': 'rgb(104, 134, 170)',
+        dark: '#409eff',
+        graphite: 'rgb(104, 134, 170)',
         'material-dark': '#f48237',
-        'light': 'rgba(33, 181, 111, 1)',
-        'ulysses': 'rgb(12, 139, 186)'
+        light: 'rgba(33, 181, 111, 1)',
+        ulysses: 'rgb(12, 139, 186)'
       }
 
       const dots = document.querySelectorAll('.dot')
@@ -97,13 +91,6 @@
       })
     </script>
 
-    <!-- Set `__static` path to static files in production -->
-    <% if (!htmlWebpackPlugin.options.isBrowser && !htmlWebpackPlugin.options.isDevelopment) { %>
-      <script>
-        window.__static = require('path').join(__dirname, '/static').replace(/\\/g, '\\\\')
-      </script>
-    <% } %>
-
-    <!-- webpack builds are automatically injected -->
+    <script type="module" src="/src/renderer/main.js"></script>
   </body>
 </html>

@@ -128,13 +128,13 @@
 
 <script>
 import { mapState } from 'vuex'
-import Compound from '../common/compound'
-import Range from '../common/range'
-import CurSelect from '../common/select'
-import Bool from '../common/bool'
-import Separator from '../common/separator'
-import textBox from '../common/textBox'
-import { isOsx } from '@/util'
+import Compound from '../common/compound/index.vue'
+import Range from '../common/range/index.vue'
+import CurSelect from '../common/select/index.vue'
+import Bool from '../common/bool/index.vue'
+import Separator from '../common/separator/index.vue'
+import textBox from '../common/textBox/index.vue'
+import { isOsx } from '../../util'
 
 import {
   titleBarStyleOptions,
