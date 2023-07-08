@@ -1,13 +1,12 @@
-import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue2'
-import { builtinModules } from 'module'
+import { defineConfig, splitVendorChunkPlugin } from 'vite'
+import renderer from 'vite-plugin-electron-renderer'
 
 // https://vitejs.dev/config
 export default defineConfig({
-  plugins: [vue()],
-  build: {
-    rollupOptions: {
-      external: builtinModules
-    }
-  }
+  plugins: [
+    vue(),
+    splitVendorChunkPlugin(),
+    renderer()
+  ]
 })
