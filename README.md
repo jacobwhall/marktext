@@ -19,14 +19,23 @@ This is a fork of [the official MarkText repository](https://github.com/marktext
 My intent is to keep Marktext alive while there is a lull in engagement from the official repo's owners.
 If the maintainers choose to bring that repository back to life, I'll sunset this fork in favor of theirs.
 
-**If you are good at building things for MacOS or Windows, please reach out. I'd like to publish multiplatform builds for each release, hopefully with GitHub Actions**
+## Installing
+
+### Linux
+
+Builds are available in rpm, deb, and AppImage formats right now!
+Head over to our [releases page](https://github.com/jacobwhall/marktext/releases) to download a copy.
+
+### MacOS and Windows
+
+✨ coming soon! ✨
 
 ## Contributing
 
 All pull requests, issues, and private messages are welcome.
 
-We follow the [Contributor Covenant](https://www.contributor-covenant.org/) code of conduct [version 2.1](.github/CODE_OF_CONDUCT.md). Please review this document before engaging with this project.
+We follow the [Contributor Covenant](https://www.contributor-covenant.org/) code of conduct [version 2.1](.github/CODE_OF_CONDUCT.md). Please review that document before engaging with this project.
 
 ## License
 
-Marktext uses the [MIT license](LICENSE).
+MarkText uses the [MIT license](LICENSE).
