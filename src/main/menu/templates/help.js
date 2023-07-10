@@ -32,65 +32,38 @@ export default function () {
     label: '&Help',
     role: 'help',
     submenu: [{
-      label: 'Quick Start...',
-      click () {
-        shell.openExternal('https://github.com/marktext/marktext/blob/master/docs/README.md')
-      }
-    }, {
       label: 'Markdown Reference...',
       click () {
-        shell.openExternal('https://github.com/marktext/marktext/blob/master/docs/MARKDOWN_SYNTAX.md')
+        shell.openExternal('https://github.com/jacobwhall/marktext/blob/trunk/docs/MARKDOWN_SYNTAX.md')
       }
     }, {
       label: 'Changelog...',
       click () {
-        shell.openExternal('https://github.com/marktext/marktext/blob/master/.github/CHANGELOG.md')
+        shell.openExternal('https://github.com/jacobwhall/marktext/blob/trunk/.github/CHANGELOG.md')
       }
     }, {
       type: 'separator'
     }, {
-      label: 'Donate via Open Collective...',
-      click (item, win) {
-        shell.openExternal('https://opencollective.com/marktext')
-      }
-    }, {
-      label: 'Feedback via Twitter...',
-      click (item, win) {
-        actions.showTweetDialog(win, 'twitter')
-      }
-    }, {
-      label: 'Report Issue or Request Feature...',
+      label: 'Ask a Question About MarkText...',
       click () {
-        shell.openExternal('https://github.com/marktext/marktext/issues')
+        shell.openExternal('https://github.com/jacobwhall/marktext/discussions')
       }
     }, {
-      type: 'separator'
-    }, {
-      label: 'Website...',
+      label: 'Report Bug or Request Feature...',
       click () {
-        shell.openExternal('https://github.com/marktext/marktext')
+        shell.openExternal('https://github.com/jacobwhall/marktext/issues')
       }
     }, {
-      label: 'Watch on GitHub...',
+      label: 'View Source on GitHub...',
       click () {
-        shell.openExternal('https://github.com/marktext/marktext')
-      }
-    }, {
-      label: 'Follow us on Github...',
-      click () {
-        shell.openExternal('https://github.com/Jocs')
-      }
-    }, {
-      label: 'Follow us on Twitter...',
-      click () {
-        shell.openExternal('https://twitter.com/marktextapp')
+        shell.openExternal('https://github.com/jacobwhall/marktext')
       }
     }, {
       type: 'separator'
     }, {
       label: 'License...',
       click () {
-        shell.openExternal('https://github.com/marktext/marktext/blob/master/LICENSE')
+        shell.openExternal('https://github.com/jacobwhall/marktext/blob/trunk/LICENSE')
       }
     }]
   }
@@ -99,7 +72,7 @@ export default function () {
     helpMenu.submenu.push({
       type: 'separator'
     }, {
-      label: 'Check for updates...',
+      label: 'Check for Updates...',
       click (menuItem, browserWindow) {
         checkUpdates(browserWindow)
       }
