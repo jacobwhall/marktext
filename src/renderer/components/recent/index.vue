@@ -3,9 +3,7 @@
       class="recent-files-projects"
     >
       <div class="centered-group">
-        <svg :viewBox="ContentIcon.viewBox" aria-hidden="true">
-          <use :xlink:href="ContentIcon.url" />
-        </svg>
+        You have no tabs open.
         <button class="button-primary" @click="newFile">
           New File
         </button>
@@ -14,11 +12,8 @@
 </template>
 
 <script>
-import ContentIcon from '@/assets/icons/undraw_content.svg'
-
 export default {
   data () {
-    this.ContentIcon = ContentIcon
     return {}
   },
   methods: {
@@ -40,10 +35,6 @@ export default {
       display: flex;
       flex-direction: column;
       align-items: center;
-      & svg {
-        width: 200px;
-        fill: var(--themeColor);
-      }
       & button.button-primary {
         display: block;
         margin-top: 20px;

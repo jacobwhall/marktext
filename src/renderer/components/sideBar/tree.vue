@@ -69,9 +69,6 @@
     </div>
     <div v-else class="open-project">
       <div class="centered-group">
-        <svg aria-hidden="true" :viewBox="FolderIcon.viewBox">
-          <use :xlink:href="FolderIcon.url"></use>
-        </svg>
         <button class="button-primary" @click="openFolder">
           Open Folder
         </button>
@@ -87,13 +84,11 @@ import OpenedFile from './treeOpenedTab.vue'
 import { mapState } from 'vuex'
 import bus from '../../bus'
 import { createFileOrDirectoryMixins } from '../../mixins'
-import FolderIcon from '@/assets/icons/undraw_folder.svg'
 
 export default {
   mixins: [createFileOrDirectoryMixins],
   data () {
     this.depth = 0
-    this.FolderIcon = FolderIcon
     return {
       showDirectories: true,
       showNewInput: false,
@@ -305,10 +300,6 @@ export default {
       display: flex;
       flex-direction: column;
       align-items: center;
-    }
-    & svg {
-      width: 120px;
-      fill: var(--themeColor);
     }
     & button.button-primary {
       display: block;

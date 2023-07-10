@@ -13,22 +13,15 @@
       :expand-on-click-node="false"
       :indent="10"
     ></el-tree>
-    <div class="no-data" v-else>
-      <svg aria-hidden="true" :viewBox="EmptyIcon.viewBox">
-        <use :xlink:href="EmptyIcon.url"></use>
-      </svg>
-    </div>
   </div>
 </template>
 
 <script>
 import { mapState } from 'vuex'
 import bus from '../../bus'
-import EmptyIcon from '@/assets/icons/undraw_toc_empty.svg'
 
 export default {
   data () {
-    this.EmptyIcon = EmptyIcon
     return {
       defaultProps: {
         children: 'children',
@@ -82,18 +75,6 @@ export default {
       font-size: 14px;
       margin-bottom: 15px;
       cursor: pointer;
-    }
-    & .no-data {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-around;
-      padding-bottom: 50px;
-      & svg {
-        width: 120px;
-        fill: var(--themeColor);
-      }
     }
   }
   .side-bar-toc-overflow {
