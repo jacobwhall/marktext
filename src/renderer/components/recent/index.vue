@@ -35,6 +35,7 @@ export default {
       display: flex;
       flex-direction: column;
       align-items: center;
+      color: var(--editorColor);
       & button.button-primary {
         display: block;
         margin-top: 20px;
