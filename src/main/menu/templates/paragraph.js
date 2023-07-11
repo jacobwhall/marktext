@@ -104,7 +104,7 @@ export default function (keybindings) {
       }
     }, {
       id: 'htmlBlockMenuItem',
-      label: 'Html Block',
+      label: 'HTML Block',
       type: 'checkbox',
       accelerator: keybindings.getAccelerator('paragraph.html-block'),
       click (menuItem, focusedWindow) {

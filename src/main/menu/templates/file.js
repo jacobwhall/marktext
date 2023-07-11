@@ -117,7 +117,7 @@ export default function (keybindings, userPreference, recentlyUsedFiles) {
       actions.importFile(browserWindow)
     }
   }, {
-    label: 'Export',
+    label: 'Export...',
     submenu: [
       {
         label: 'HTML',
@@ -133,7 +133,7 @@ export default function (keybindings, userPreference, recentlyUsedFiles) {
       }
     ]
   }, {
-    label: 'Print',
+    label: 'Print...',
     accelerator: keybindings.getAccelerator('file.print'),
     click (menuItem, browserWindow) {
       actions.printDocument(browserWindow)
