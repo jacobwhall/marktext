@@ -1,7 +1,7 @@
 {
   "name": "marktext",
-  "version": "0.17.1",
-  "homepage": "https://github.com/marktext/marktext/",
+  "version": "0.17.4",
+  "homepage": "https://github.com/jacobwhall/marktext/",
   "description": "Next generation markdown editor",
   "license": "MIT",
   "main": "./dist/electron/main.js",
