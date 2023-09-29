@@ -19,6 +19,11 @@ This is a fork of [the official MarkText repository](https://github.com/marktext
 My intent is to keep Marktext alive while there is a lull in engagement from the official repo's owners.
 If the maintainers choose to bring that repository back to life, I'll sunset this fork in favor of theirs.
 
+**I have very limited time, all I can really do is make sure the app can still run.
+If you would like to see this project grow, please do what you can to help!
+I will prioritize PR reviews.
+Thank you.**
+
 ## Installing
 
 ### Linux
