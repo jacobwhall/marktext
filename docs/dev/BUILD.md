@@ -1,10 +1,40 @@
 # Build Instructions
 
+**Please see [this issue](https://github.com/jacobwhall/marktext/issues/2) for updates on our efforts to modernize this process!**
+
 Clone the repository:
 
 ```
 git clone https://github.com/marktext/marktext.git
 ```
+
+## Container Setup
+
+The Marktext build process currently relies on an old version of node.
+The easiest way to build Marktext for Linux right now is from inside a container.
+Here are the steps for doing so:
+```sh
+# cd to marktext repository
+
+# run container (you can use docker instead of podman if you like)
+podman run -it -v ./:/mnt:Z node:18.19-bookworm /bin/bash
+# you should now be interacting with the container
+
+# install dependency xkbfile
+apt update
+apt-get install libx11-dev libxkbfile-dev libsecret-1-dev libfontconfig-dev rpm
+
+cd /mnt
+yarn install
+yarn run build
+
+exit
+# container should now be terminated
+
+# build artifacts can be found in build directory
+```
+
+Below are the complete build instructions, which may help you troubleshoot the above or attempt to build for other platforms.
 
 ### Prerequisites
 
