@@ -1,3 +1,6 @@
+> [!NOTE]  
+> This repository is now archived. Please check out [recent work by @Tkaixiang](https://github.com/Tkaixiang/marktext) for more recent work on Marktext.
+
 # MarkText
 
 Original README.md translations:
